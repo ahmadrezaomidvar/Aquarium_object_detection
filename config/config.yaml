@@ -1,0 +1,30 @@
+# model configuration can be configured here
+
+data:
+  root: /data/reza/datasets/aquarium
+  test_root: /data/reza/datasets/aquarium/test
+  test_img_format: jpg
+
+model:
+  model_name: fasterrcnn_resnet50_fpn
+  num_classes: 8
+  check_point_path: ./checkpoint/mF1-0.06.pth
+
+train:
+  lr: 0.005
+  momentum: 0.9
+  epochs: 50
+  train_batch: 4
+  val_batch: 1
+  test_batch: 4
+  all_layers: True
+  num_workers: 2
+  seed: 1221
+  step_size: 3
+  gamma: 0.1
+
+# tensorboard: enable
+
+hydra:
+  run:
+    dir: .                    #default will be 'outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}' (https://github.com/facebookresearch/hydra/blob/1.0_branch/hydra/conf/hydra/output/default.yaml)
