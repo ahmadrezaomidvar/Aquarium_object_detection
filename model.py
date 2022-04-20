@@ -25,4 +25,5 @@ class GetModel:
 
 
 if __name__ == '__main__':
-    print('')
+    model = GetModel(num_classes=8).model
+    print(model)
